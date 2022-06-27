@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "lodash": "^4.17.21",
     "moment": "^2.29.3",
     "multiselect-react-dropdown": "^2.0.25",
     "next": "12.1.6",
