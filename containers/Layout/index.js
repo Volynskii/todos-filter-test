@@ -8,7 +8,7 @@ const sidebars = {
     formFilter: <Form/>
 };
 
-const SideBarComponent = ({sidebar,children}) => {
+const Layout = ({sidebar,children}) => {
 
     const Sidebar = useMemo(() => sidebars[sidebar], [sidebar]);
     // "sidebar" prop was passed renders sidebar, otherwise no
@@ -31,4 +31,4 @@ const SideBarComponent = ({sidebar,children}) => {
     )
 };
 
-export default SideBarComponent;
+export default Layout;

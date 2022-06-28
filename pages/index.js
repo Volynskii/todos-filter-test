@@ -7,16 +7,14 @@ import { useEffect, useState, useRef } from 'react';
 import {useRouter} from "next/router";
 import Link from 'next/link'
 
-export default function Home({ todos, totalItems, totalPages }) {
+export default function Home({ todos, totalPages }) {
 
     const router = useRouter();
     const { query } = router;
 
-    const TOTAL_PAGES = totalPages;
     const sort = query.sort || '';
     const priority = query.priority || '';
     const tags = query.tags || '';
-    const page = query.page || 1;
     const limit = 15;
 
 
