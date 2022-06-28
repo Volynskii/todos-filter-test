@@ -100,7 +100,6 @@ export async function getServerSideProps({query}) {
         props: {
             sidebar: 'formFilter',
             todos: data.products,
-            totalItems: data.nbHits,
             totalPages: data.totalPages
         },
     };
