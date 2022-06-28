@@ -3,8 +3,8 @@
 ![Todos](https://i.ibb.co/kc8Fvp9/todos-preview.png)
 
 ## Introduction
-
-- Для запуска нужно включить сервер https://github.com/Volynskii/todos-api
+- Для запуска нужно включить сервер https://github.com/Volynskii/todos-api.
+- Вёрстка сделана в rem единицах и реагирует на настройки размера шрифта браузера.
 
 - Задание сделано на React + Next.js фреймворках.
 - Одностраничные приложение (SPA).
