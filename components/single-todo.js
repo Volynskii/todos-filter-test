@@ -2,6 +2,9 @@ import React from 'react';
 import {useRouter} from "next/router";
 import {deleteProduct} from "../utils/fetchApi";
 import moment from "moment";
+import 'moment/locale/ru';
+moment.locale('ru');
+
 
 const SingleTodo = ({data,id, onEdit}) => {
 
@@ -9,8 +12,13 @@ const SingleTodo = ({data,id, onEdit}) => {
     const router = useRouter();
 
     const onRemoveItem = async (id) => {
-        deleteProduct(id);
-        router.push({ pathname: `http://localhost:3000` });
+            e.preventDefault();
+            try {
+                await deleteProduct(id);
+                router.push({ pathname: `http://localhost:3000` });
+            } catch (e) {
+                console.log(e.message)
+            }
     };
 
     return (

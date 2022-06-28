@@ -7,6 +7,7 @@ const FormEdit = ({data, id, onEdit}) => {
 
     const router = useRouter();
 
+    const options = ['research','design', 'development'];
     const { title, tags, priority, description } = data;
 
     const initialValues = {
@@ -26,11 +27,14 @@ const FormEdit = ({data, id, onEdit}) => {
         });
     };
 
-    const onSubmit = (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault();
-        updateProduct(id, values);
-        router.reload();
-
+        try {
+            await updateProduct(id, values);
+            router.reload();
+        } catch (e) {
+        console.log(e.message)
+        }
     };
     return (
         <>
@@ -63,7 +67,7 @@ const FormEdit = ({data, id, onEdit}) => {
                                 ['tags']: updatedState,
                             });
                         }}
-                        options={['research','design', 'development']}
+                        options={options}
                         selectedValues={tags}
                     />
                     <h2>ОПИСАНИЕ</h2>

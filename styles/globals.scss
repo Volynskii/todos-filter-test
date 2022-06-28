@@ -46,8 +46,6 @@ label {
   cursor: pointer;
 }
 
-
-
 main {
   font-size: 1.7rem;
   min-height: 100vh;
@@ -86,6 +84,9 @@ h2 {
     h2 {
       @include title-text(2.2rem);
       cursor: pointer;
+      &:hover {
+        color:#0097e6;
+      }
     }
 
     .date-block {
@@ -102,6 +103,8 @@ h2 {
 
 
 
+// form-filter start
+
 .sibebar-container {
   position: relative;
   display:grid;
@@ -110,7 +113,6 @@ h2 {
 
 }
 
-
 .form-filter {
   display: flex;
   flex-direction: column;
@@ -118,61 +120,62 @@ h2 {
   font-size: 1.9rem;
   position: sticky;
   top: 0;
+
+
+  .form-filter__item {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: white;
+    padding: 2.1rem;
+    border-radius: 5px;
+    line-height: 3rem;
+    border: 1px solid darkgrey;
+    position: sticky;
+    top: 0;
+
+  }
+
+  .form-filter__item__container {
+    display: flex;
+    align-items: center;
+    line-height: 2.5rem;
+  }
+
+  h1 {
+    @include title-text(2.2rem);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+  }
+
+
+  input[type="radio"] {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+  }
+
+
+  input[type="radio"] + label::before {
+    content: "";
+    display: inline-block;
+    margin-right: 1rem;
+  }
+
+  input[type="checkbox"] {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+  }
+
+
+  input[type="checkbox"] + label::before {
+    content: "";
+    display: inline-block;
+    margin-right: 1rem;
+  }
+
 }
-
-.form-filter__item {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  background-color: white;
-  padding: 2.1rem;
-  border-radius: 5px;
-  line-height: 3rem;
-  border: 1px solid darkgrey;
-  position: sticky;
-  top: 0;
-
-}
-
-.form-filter__item__container {
-  display: flex;
-  align-items: center;
-  line-height: 2.5rem;
-}
-
-h1 {
-  @include title-text(2.2rem);
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-}
-
-
-input[type="radio"] {
-  width: 2rem;
-  height: 2rem;
-  cursor: pointer;
-}
-
-
-input[type="radio"] + label::before {
-  content: "";
-  display: inline-block;
-  margin-right: 1rem;
-}
-
-input[type="checkbox"] {
-  width: 2rem;
-  height: 2rem;
-  cursor: pointer;
-}
-
-
-input[type="checkbox"] + label::before {
-  content: "";
-  display: inline-block;
-  margin-right: 1rem;
-}
-
 
 // single item start
 

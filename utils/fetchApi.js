@@ -13,5 +13,5 @@ export const deleteProduct = async (id) => {
 };
 
 export const updateProduct = async ( id, data ) => {
-    axios.patch(`${baseUrl}/todos/${id}`, data)
+  axios.patch(`${baseUrl}/todos/${id}`, data)
 };

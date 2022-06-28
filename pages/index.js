@@ -34,8 +34,8 @@ export default function Home({ todos, totalPages }) {
         observer.current = new IntersectionObserver((entries) => {
             const first = entries[0];
             if (first.isIntersecting && pageNum <= totalPages + 1) {
-                    setPageNum((no) => no + 1);
-                    loadMore()
+                setPageNum((no) => no + 1);
+                loadMore()
             }
         })
     }, [lastElement]);
@@ -65,24 +65,24 @@ export default function Home({ todos, totalPages }) {
 
     return (
         <>
-                <div className="catalog">
-                    <button>Добавить задачу</button>
-                    {allTodos.map(({_id, title, createdAt, priority, tags},index) => {
-                        return (
-                            <div  ref={setLastElement} key={_id} className="catalog__item">
-                                <Link href={`/todos/${_id}`}>
+            <div className="catalog">
+                <button>Добавить задачу</button>
+                {allTodos.map(({_id, title, createdAt, priority, tags},index) => {
+                    return (
+                        <div  ref={setLastElement} key={_id} className="catalog__item">
+                            <Link href={`/todos/${_id}`}>
                                 <h2>{title}</h2>
-                                </Link>
+                            </Link>
 
-                                <div className="date-block">
-                                    <span>создано: {moment(createdAt).fromNow()}</span>
-                                    <span>Приоритет: {priority}</span>
-                                    <span>Отметки: {tags.join(', ')}</span>
-                                </div>
+                            <div className="date-block">
+                                <span>создано: {moment(createdAt).fromNow()}</span>
+                                <span>Приоритет: {priority}</span>
+                                <span>Отметки: {tags.join(', ')}</span>
                             </div>
-                        )
-                    })}
-                </div>
+                        </div>
+                    )
+                })}
+            </div>
         </>
     )
 }
@@ -104,5 +104,3 @@ export async function getServerSideProps({query}) {
         },
     };
 }
-
-
